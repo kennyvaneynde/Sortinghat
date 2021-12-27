@@ -1,0 +1,131 @@
+/*STYLE FOR ALL THE PAGES*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e1eedd;
+}
+
+.container{
+    background: #fefbe9;
+    padding: 40px 40px;
+    width: 750px;
+    height: 750px;
+}
+
+.container .titel{
+    border-left: 5px solid grey;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.container .index-image{
+    width: 630px;
+    height: 420px;
+
+    position: relative;
+    left: 20px;
+}
+
+.container .user-image{
+    width: 320px;
+    height: 300px;
+
+    position: relative;
+    left: 180px;
+}
+
+.container .Center-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field{
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.input-field .input-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.input-field .input{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid grey;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.container .button{
+    justify-content: center;
+    background:grey;
+    color: beige;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.container .button-house{
+    justify-content: center;
+    background:grey;
+    color: beige;
+    padding: 15px;
+    width: 332px;
+    font-size: 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.container .houses{
+    position: relative;
+    left: 35px;
+
+    display: inline-block;
+}
+
+.radio{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.radio__radio{
+    width: 1.5em;
+    height: 1.5em;
+    border: 3px solid whitesmoke;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+footer{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    text-align: center;
+
+}
+
+th, td{
+    padding: 15px;
+}
