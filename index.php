@@ -1,50 +1,40 @@
-<!--HOME PAGINA-->
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-        <title>Home</title>
-    </head>
-    <body>
-        <div class="container">
+<?php
+    class Database {
+        private $hostname;
+        private $user;
+        private $password;
+        private $database;
+        private $port;
+        public $connection;
 
-            <h1 class="titel">
-                Home
-            </h1>
-            
-            <div>
-                <img src="assets/img/Welcome-sign.jpg" alt="Welcome-sign" class="index-image">
-            </div>
+        function __construct($hostname, $user, $password, $database, $port)
+        {
+            $this->hostname = $hostname;
+            $this->user = $user;
+            $this->password = $password;
+            $this->database = $database;
+            $this->port = $port;
+ 
+            $this->connectToDatabase();
+        }
 
-            <br>
+        function connectToDatabase() {
+            $conn = mysqli_connect($this->hostname, $this->user, $this->password, $this->database, $this->port);
 
-            <a href="createuser.php">
-                <button class="button">
-                    Add User
-                </button>
-            </a>
+            if ($conn == false) {
+                echo "There is no connection with the database";
+                die();
+            }
+            $this->connection = $conn;
+        }
 
-            <br>
+        function getQuery($sql) {
+            return mysqli_query($this->connection, $sql)->fetch_all(MYSQLI_ASSOC);
+        }
 
-            <a href="putinhouse.php">
-                <button class="button">
-                    Put people in a house
-                </button>
-            </a>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <footer>
-                © 2021 - Created by Kenny Van Eynde 
-            </footer>
-
-        </div>
-    </body>
-</html>
+        function insertQuery($sql) {
+            mysqli_query($this->connection, $sql);
+        }
+    }
+    //$DataBaseKenny = new Database("ID361990_sortinghat.db.webhosting.be", "ID361990_sortinghat", "sortinghat123", "ID361990_sortinghat", 3306);
+    $DataBaseKenny = new Database("localhost", "root", "root", "sortinghat", 3306);
