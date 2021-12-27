@@ -11,7 +11,7 @@
     <body>
         <?php
             //connectie naar de database
-            include "DataBase/index.php";
+            include "DataBase/indexDB.php";
 
             //variabelen voor de input
             $firstname = $_GET['firstname'];

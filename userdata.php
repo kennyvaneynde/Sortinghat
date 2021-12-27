@@ -11,7 +11,7 @@
     <body>
         <div class="container">
                 <?php
-                    include "DataBase/index.php";
+                    include "DataBase/indexDB.php";
 
                     $users = $DataBaseKenny->getQuery("SELECT * from Users where Id = (select max(Id) from Users);");
 
